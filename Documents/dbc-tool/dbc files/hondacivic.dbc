@@ -1,0 +1,27 @@
+VERSION "Honda Civic CAN DBC"
+
+NS_ :
+	BA_ "BusType" STRING ;
+	BA_ "ProtocolType" STRING ;
+	BA_ "Manufacturer" STRING ;
+
+BS_:
+
+BU_: ECU
+
+BO_ 380 HondaCivic_POWERTRAIN_DATA: 8 ECU
+ SG_ Engine_Speed : 16|16@1+ (1,0) [0|65535] "rpm" ECU
+
+BO_ 777 HondaCivic_CARSPEED: 8 ECU
+ SG_ Vehicle_Speed : 0|16@1+ (0.01,0) [0|655.35] "km/h" ECU
+
+BO_ 392 HondaCivic_GEARBOX: 8 ECU
+ SG_ Gear_Shifter : 24|8@1+ (1,0) [0|255] "" ECU
+
+BO_ 356 HondaCivic_LIGHT: 8 ECU
+ SG_ Light_State : 0|8@1+ (1,0) [0|3] "" ECU
+
+BO_ 660 HondaCivic_SCM_FEEDBACK: 8 ECU
+ SG_ Right_Blinker : 6|1@1+ (1,0) [0|1] "" ECU
+ SG_ Left_Blinker : 5|1@1+ (1,0) [0|1] "" ECU
+ SG_ Wiper_Speed : 3|2@1+ (1,0) [0|3] "" ECU

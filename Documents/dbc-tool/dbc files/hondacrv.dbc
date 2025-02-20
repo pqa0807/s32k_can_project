@@ -1,0 +1,22 @@
+VERSION "Honda CRV CAN DBC"
+
+NS_ :
+	BA_ "BusType" STRING ;
+	BA_ "ProtocolType" STRING ;
+	BA_ "Manufacturer" STRING ;
+
+BS_:
+
+BU_: ECU
+
+BO_ 464 HondaCRV_WHEEL_SPEEDS: 8 ECU
+ SG_ WheelSpeed_FL : 0|15@1+ (0.01,-100) [0|655.35] "km/h" ECU
+ SG_ WheelSpeed_FR : 16|15@1+ (0.01,-100) [0|655.35] "km/h" ECU
+ SG_ WheelSpeed_RL : 32|15@1+ (0.01,-100) [0|655.35] "km/h" ECU
+ SG_ WheelSpeed_RR : 48|15@1+ (0.01,-100) [0|655.35] "km/h" ECU
+
+BO_ 344 HondaCRV_ENGINE_DATA: 8 ECU
+ SG_ Engine_Speed : 16|16@1+ (1,0) [0|65535] "rpm" ECU
+
+BO_ 380 HondaCRV_POWERTRAIN_DATA: 8 ECU
+ SG_ Engine_Speed : 16|16@1+ (1,0) [0|65535] "rpm" ECU

@@ -74,5 +74,3 @@ void HuynhDai_Elantra_Signal(standard_frame_t frame){
     sprintf(buffer, "Fog light: %s %s\n", raw_data, Hazard ? "ON" : "OFF");
     LPUART1_transmit_string(buffer);
 }
-
-
